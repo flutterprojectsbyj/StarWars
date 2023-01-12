@@ -54,9 +54,14 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Star Wars"), backgroundColor: Colors.blue),
-      body: Container(
-        color: Colors.red,
-      )
+      body: ListView.builder(
+        itemCount: data == null ? 0 : data.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Card(
+            child: Text(data[index]!),
+          );
+        },
+      ),
     );
   }
 }
