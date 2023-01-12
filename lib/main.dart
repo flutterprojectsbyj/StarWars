@@ -23,6 +23,7 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   List<String?> data = [];
   String domain = "https://swapi.dev/api/people/?page=1&format=json";
+  bool debugMode = false;
 
   getData(String domain) async {
     var client = http.Client();
@@ -33,10 +34,14 @@ class MyAppState extends State<MyApp> {
       body["results"].forEach((v) {
         data.add(Results.fromJson(v).name);
       });
-      print(data.toString());
+      if (debugMode) {
+        print(data.toString());
+      }
 
       if(!body["next"].toString().contains("null")) {
-        print(body["next"]);
+        if (debugMode) {
+          print(body["next"]);
+        }
         getData(body["next"]);
       }
 
