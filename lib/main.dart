@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starwars/screens/asyncawait.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -37,9 +38,7 @@ class _HomeState extends State<Home> {
           Expanded(
             child: Column(
               children: [
-                TextButton(
-                    onPressed: () {},
-                    child: const Text("Async / Await method")),
+                TextButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) { return AsyncAwait(); })), child: const Text("Async / Await method")),
                 TextButton(onPressed: () {}, child: const Text("Stream")),
                 TextButton(onPressed: () {}, child: const Text("FutureBuilder")),
                 TextButton(onPressed: () {}, child: const Text("StreamBuilder")),
