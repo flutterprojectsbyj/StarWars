@@ -8,7 +8,8 @@ import 'StarWars.dart';
 
 void main() {
   runApp(const MaterialApp(
-      home: MyApp()
+      home: MyApp(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
