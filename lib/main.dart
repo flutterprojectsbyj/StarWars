@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:starwars/screens/asyncawait.dart';
+import 'package:starwars/screens/futurebuilder.dart';
 import 'package:starwars/screens/stream.dart';
 
 void main() {
@@ -41,7 +42,7 @@ class _HomeState extends State<Home> {
               children: [
                 TextButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) { return AsyncAwait(); })), child: const Text("Async / Await method")),
                 TextButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) { return StreamScreen(); })), child: const Text("Stream")),
-                TextButton(onPressed: () {}, child: const Text("FutureBuilder")),
+                TextButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) { return FutureBuild(); })), child: const Text("FutureBuilder")),
                 TextButton(onPressed: () {}, child: const Text("StreamBuilder")),
               ],
             ),
